@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище AutomobilesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Automobiles">
+          <Key>
+            <PropertyRef Name="idAuto" />
+          </Key>
+          <Property Name="idAuto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idBrand" Type="int" />
+          <Property Name="idModel" Type="int" />
+          <Property Name="idKPP" Type="int" />
+          <Property Name="yearModel" Type="int" />
+          <Property Name="price" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="idBrand" />
+          </Key>
+          <Property Name="idBrand" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameBrand" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="KPP">
+          <Key>
+            <PropertyRef Name="idKPP" />
+          </Key>
+          <Property Name="idKPP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameKPP" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Models">
+          <Key>
+            <PropertyRef Name="idModel" />
+          </Key>
+          <Property Name="idModel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameModel" Type="varchar" MaxLength="100" />
+          <Property Name="typeModel" Type="varchar" MaxLength="100" />
+          <Property Name="classModel" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="idOrder" />
+          </Key>
+          <Property Name="idOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAuto" Type="int" />
+          <Property Name="idUser" Type="int" />
+          <Property Name="dateOrder" Type="date" />
+          <Property Name="dateStart" Type="date" />
+          <Property Name="dateFinish" Type="date" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="100" />
+          <Property Name="secondName" Type="varchar" MaxLength="100" />
+          <Property Name="middleName" Type="varchar" MaxLength="100" />
+          <Property Name="numberDrivingLicense" Type="varchar" MaxLength="100" />
+          <Property Name="tel" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="Хранилище AutomobilesModelContainer">
+          <EntitySet Name="Automobiles" EntityType="Self.Automobiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KPP" EntityType="Self.KPP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Models" EntityType="Self.Models" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutomobilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Automobiles">
+          <Key>
+            <PropertyRef Name="idAuto" />
+          </Key>
+          <Property Name="idAuto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idBrand" Type="Int32" />
+          <Property Name="idModel" Type="Int32" />
+          <Property Name="idKPP" Type="Int32" />
+          <Property Name="yearModel" Type="Int32" />
+          <Property Name="price" Type="Decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="idBrand" />
+          </Key>
+          <Property Name="idBrand" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameBrand" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KPP">
+          <Key>
+            <PropertyRef Name="idKPP" />
+          </Key>
+          <Property Name="idKPP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameKPP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Models">
+          <Key>
+            <PropertyRef Name="idModel" />
+          </Key>
+          <Property Name="idModel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameModel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="typeModel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="classModel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="idOrder" />
+          </Key>
+          <Property Name="idOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAuto" Type="Int32" />
+          <Property Name="idUser" Type="Int32" />
+          <Property Name="dateOrder" Type="DateTime" Precision="0" />
+          <Property Name="dateStart" Type="DateTime" Precision="0" />
+          <Property Name="dateFinish" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="secondName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="middleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numberDrivingLicense" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AutomobilesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Automobiles" EntityType="Self.Automobiles" />
+          <EntitySet Name="Brands" EntityType="Self.Brands" />
+          <EntitySet Name="KPP" EntityType="Self.KPP" />
+          <EntitySet Name="Models" EntityType="Self.Models" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AutomobilesModelContainer" CdmEntityContainer="AutomobilesEntities">
+          <EntitySetMapping Name="Automobiles">
+            <EntityTypeMapping TypeName="AutomobilesModel.Automobiles">
+              <MappingFragment StoreEntitySet="Automobiles">
+                <ScalarProperty Name="idAuto" ColumnName="idAuto" />
+                <ScalarProperty Name="idBrand" ColumnName="idBrand" />
+                <ScalarProperty Name="idModel" ColumnName="idModel" />
+                <ScalarProperty Name="idKPP" ColumnName="idKPP" />
+                <ScalarProperty Name="yearModel" ColumnName="yearModel" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="AutomobilesModel.Brands">
+              <MappingFragment StoreEntitySet="Brands">
+                <ScalarProperty Name="idBrand" ColumnName="idBrand" />
+                <ScalarProperty Name="nameBrand" ColumnName="nameBrand" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPP">
+            <EntityTypeMapping TypeName="AutomobilesModel.KPP">
+              <MappingFragment StoreEntitySet="KPP">
+                <ScalarProperty Name="idKPP" ColumnName="idKPP" />
+                <ScalarProperty Name="nameKPP" ColumnName="nameKPP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Models">
+            <EntityTypeMapping TypeName="AutomobilesModel.Models">
+              <MappingFragment StoreEntitySet="Models">
+                <ScalarProperty Name="idModel" ColumnName="idModel" />
+                <ScalarProperty Name="nameModel" ColumnName="nameModel" />
+                <ScalarProperty Name="typeModel" ColumnName="typeModel" />
+                <ScalarProperty Name="classModel" ColumnName="classModel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="AutomobilesModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="idOrder" ColumnName="idOrder" />
+                <ScalarProperty Name="idAuto" ColumnName="idAuto" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="dateOrder" ColumnName="dateOrder" />
+                <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+                <ScalarProperty Name="dateFinish" ColumnName="dateFinish" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="AutomobilesModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="secondName" ColumnName="secondName" />
+                <ScalarProperty Name="middleName" ColumnName="middleName" />
+                <ScalarProperty Name="numberDrivingLicense" ColumnName="numberDrivingLicense" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
