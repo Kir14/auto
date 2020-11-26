@@ -14,9 +14,18 @@ namespace auto.DataBase
     
     public partial class Models
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Models()
+        {
+            this.Automobiles = new HashSet<Automobiles>();
+        }
+    
         public int idModel { get; set; }
         public string nameModel { get; set; }
         public string typeModel { get; set; }
         public string classModel { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Automobiles> Automobiles { get; set; }
     }
 }

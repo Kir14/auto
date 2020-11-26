@@ -20,5 +20,8 @@ namespace auto.DataBase
         public Nullable<System.DateTime> dateOrder { get; set; }
         public Nullable<System.DateTime> dateStart { get; set; }
         public Nullable<System.DateTime> dateFinish { get; set; }
+    
+        public virtual Automobiles Automobiles { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

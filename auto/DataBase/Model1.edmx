@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище AutomobilesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище ModelAutomobiles" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Automobiles">
           <Key>
             <PropertyRef Name="idAuto" />
@@ -22,6 +22,14 @@
           </Key>
           <Property Name="idBrand" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameBrand" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="idImage" />
+          </Key>
+          <Property Name="idImage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAuto" Type="int" />
+          <Property Name="image" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="KPP">
           <Key>
@@ -61,19 +69,115 @@
           <Property Name="numberDrivingLicense" Type="varchar" MaxLength="100" />
           <Property Name="tel" Type="varchar" MaxLength="100" />
         </EntityType>
-        <EntityContainer Name="Хранилище AutomobilesModelContainer">
+        <Association Name="FK_AUTO">
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Automobiles">
+              <PropertyRef Name="idAuto" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="idAuto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BRANDS">
+          <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brands">
+              <PropertyRef Name="idBrand" />
+            </Principal>
+            <Dependent Role="Automobiles">
+              <PropertyRef Name="idBrand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMAGES">
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="0..1" />
+          <End Role="Images" Type="Self.Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Automobiles">
+              <PropertyRef Name="idAuto" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="idAuto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPP">
+          <End Role="KPP" Type="Self.KPP" Multiplicity="0..1" />
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPP">
+              <PropertyRef Name="idKPP" />
+            </Principal>
+            <Dependent Role="Automobiles">
+              <PropertyRef Name="idKPP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MODEL">
+          <End Role="Models" Type="Self.Models" Multiplicity="0..1" />
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Models">
+              <PropertyRef Name="idModel" />
+            </Principal>
+            <Dependent Role="Automobiles">
+              <PropertyRef Name="idModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERS">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ModelAutomobilesContainer">
           <EntitySet Name="Automobiles" EntityType="Self.Automobiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KPP" EntityType="Self.KPP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Models" EntityType="Self.Models" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AUTO" Association="Self.FK_AUTO">
+            <End Role="Automobiles" EntitySet="Automobiles" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BRANDS" Association="Self.FK_BRANDS">
+            <End Role="Brands" EntitySet="Brands" />
+            <End Role="Automobiles" EntitySet="Automobiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMAGES" Association="Self.FK_IMAGES">
+            <End Role="Automobiles" EntitySet="Automobiles" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPP" Association="Self.FK_KPP">
+            <End Role="KPP" EntitySet="KPP" />
+            <End Role="Automobiles" EntitySet="Automobiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MODEL" Association="Self.FK_MODEL">
+            <End Role="Models" EntitySet="Models" />
+            <End Role="Automobiles" EntitySet="Automobiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERS" Association="Self.FK_USERS">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AutomobilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ModelAutomobiles" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Automobiles">
           <Key>
             <PropertyRef Name="idAuto" />
@@ -84,6 +188,11 @@
           <Property Name="idKPP" Type="Int32" />
           <Property Name="yearModel" Type="Int32" />
           <Property Name="price" Type="Decimal" Precision="5" Scale="2" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_AUTO" FromRole="Automobiles" ToRole="Orders" />
+          <NavigationProperty Name="Brands" Relationship="Self.FK_BRANDS" FromRole="Automobiles" ToRole="Brands" />
+          <NavigationProperty Name="KPP" Relationship="Self.FK_KPP" FromRole="Automobiles" ToRole="KPP" />
+          <NavigationProperty Name="Models" Relationship="Self.FK_MODEL" FromRole="Automobiles" ToRole="Models" />
+          <NavigationProperty Name="Images" Relationship="ModelAutomobiles.FK_IMAGES" FromRole="Automobiles" ToRole="Images" />
         </EntityType>
         <EntityType Name="Brands">
           <Key>
@@ -91,6 +200,7 @@
           </Key>
           <Property Name="idBrand" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nameBrand" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Automobiles" Relationship="Self.FK_BRANDS" FromRole="Brands" ToRole="Automobiles" />
         </EntityType>
         <EntityType Name="KPP">
           <Key>
@@ -98,6 +208,7 @@
           </Key>
           <Property Name="idKPP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nameKPP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Automobiles" Relationship="Self.FK_KPP" FromRole="KPP" ToRole="Automobiles" />
         </EntityType>
         <EntityType Name="Models">
           <Key>
@@ -107,6 +218,7 @@
           <Property Name="nameModel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="typeModel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="classModel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Automobiles" Relationship="Self.FK_MODEL" FromRole="Models" ToRole="Automobiles" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -118,6 +230,8 @@
           <Property Name="dateOrder" Type="DateTime" Precision="0" />
           <Property Name="dateStart" Type="DateTime" Precision="0" />
           <Property Name="dateFinish" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Automobiles" Relationship="Self.FK_AUTO" FromRole="Orders" ToRole="Automobiles" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_USERS" FromRole="Orders" ToRole="Users" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -129,23 +243,130 @@
           <Property Name="middleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="numberDrivingLicense" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="tel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_USERS" FromRole="Users" ToRole="Orders" />
         </EntityType>
-        <EntityContainer Name="AutomobilesEntities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_AUTO">
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Automobiles">
+              <PropertyRef Name="idAuto" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="idAuto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BRANDS">
+          <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brands">
+              <PropertyRef Name="idBrand" />
+            </Principal>
+            <Dependent Role="Automobiles">
+              <PropertyRef Name="idBrand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPP">
+          <End Role="KPP" Type="Self.KPP" Multiplicity="0..1" />
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPP">
+              <PropertyRef Name="idKPP" />
+            </Principal>
+            <Dependent Role="Automobiles">
+              <PropertyRef Name="idKPP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MODEL">
+          <End Role="Models" Type="Self.Models" Multiplicity="0..1" />
+          <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Models">
+              <PropertyRef Name="idModel" />
+            </Principal>
+            <Dependent Role="Automobiles">
+              <PropertyRef Name="idModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERS">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntitiesAutomobiles" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Automobiles" EntityType="Self.Automobiles" />
           <EntitySet Name="Brands" EntityType="Self.Brands" />
           <EntitySet Name="KPP" EntityType="Self.KPP" />
           <EntitySet Name="Models" EntityType="Self.Models" />
           <EntitySet Name="Orders" EntityType="Self.Orders" />
           <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_AUTO" Association="Self.FK_AUTO">
+            <End Role="Automobiles" EntitySet="Automobiles" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BRANDS" Association="Self.FK_BRANDS">
+            <End Role="Brands" EntitySet="Brands" />
+            <End Role="Automobiles" EntitySet="Automobiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPP" Association="Self.FK_KPP">
+            <End Role="KPP" EntitySet="KPP" />
+            <End Role="Automobiles" EntitySet="Automobiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MODEL" Association="Self.FK_MODEL">
+            <End Role="Models" EntitySet="Models" />
+            <End Role="Automobiles" EntitySet="Automobiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERS" Association="Self.FK_USERS">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="Images" EntityType="ModelAutomobiles.Images" />
+          <AssociationSet Name="FK_IMAGES" Association="ModelAutomobiles.FK_IMAGES">
+            <End Role="Automobiles" EntitySet="Automobiles" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="idImage" />
+          </Key>
+          <Property Name="idImage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="idAuto" Type="Int32" />
+          <NavigationProperty Name="Automobiles" Relationship="ModelAutomobiles.FK_IMAGES" FromRole="Images" ToRole="Automobiles" />
+        </EntityType>
+        <Association Name="FK_IMAGES">
+          <End Type="ModelAutomobiles.Automobiles" Role="Automobiles" Multiplicity="0..1" />
+          <End Type="ModelAutomobiles.Images" Role="Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Automobiles">
+              <PropertyRef Name="idAuto" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="idAuto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище AutomobilesModelContainer" CdmEntityContainer="AutomobilesEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelAutomobilesContainer" CdmEntityContainer="EntitiesAutomobiles">
           <EntitySetMapping Name="Automobiles">
-            <EntityTypeMapping TypeName="AutomobilesModel.Automobiles">
+            <EntityTypeMapping TypeName="ModelAutomobiles.Automobiles">
               <MappingFragment StoreEntitySet="Automobiles">
                 <ScalarProperty Name="idAuto" ColumnName="idAuto" />
                 <ScalarProperty Name="idBrand" ColumnName="idBrand" />
@@ -157,7 +378,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Brands">
-            <EntityTypeMapping TypeName="AutomobilesModel.Brands">
+            <EntityTypeMapping TypeName="ModelAutomobiles.Brands">
               <MappingFragment StoreEntitySet="Brands">
                 <ScalarProperty Name="idBrand" ColumnName="idBrand" />
                 <ScalarProperty Name="nameBrand" ColumnName="nameBrand" />
@@ -165,7 +386,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KPP">
-            <EntityTypeMapping TypeName="AutomobilesModel.KPP">
+            <EntityTypeMapping TypeName="ModelAutomobiles.KPP">
               <MappingFragment StoreEntitySet="KPP">
                 <ScalarProperty Name="idKPP" ColumnName="idKPP" />
                 <ScalarProperty Name="nameKPP" ColumnName="nameKPP" />
@@ -173,7 +394,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Models">
-            <EntityTypeMapping TypeName="AutomobilesModel.Models">
+            <EntityTypeMapping TypeName="ModelAutomobiles.Models">
               <MappingFragment StoreEntitySet="Models">
                 <ScalarProperty Name="idModel" ColumnName="idModel" />
                 <ScalarProperty Name="nameModel" ColumnName="nameModel" />
@@ -183,7 +404,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="AutomobilesModel.Orders">
+            <EntityTypeMapping TypeName="ModelAutomobiles.Orders">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="idOrder" ColumnName="idOrder" />
                 <ScalarProperty Name="idAuto" ColumnName="idAuto" />
@@ -195,7 +416,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="AutomobilesModel.Users">
+            <EntityTypeMapping TypeName="ModelAutomobiles.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
@@ -203,6 +424,15 @@
                 <ScalarProperty Name="middleName" ColumnName="middleName" />
                 <ScalarProperty Name="numberDrivingLicense" ColumnName="numberDrivingLicense" />
                 <ScalarProperty Name="tel" ColumnName="tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="ModelAutomobiles.Images">
+              <MappingFragment StoreEntitySet="Images">
+                <ScalarProperty Name="idAuto" ColumnName="idAuto" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="idImage" ColumnName="idImage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -4,13 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="91f2af5c16ab450288ba015aab9d7345" Name="Diagram1">
-        <EntityTypeShape EntityType="AutomobilesModel.Automobiles" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutomobilesModel.Brands" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutomobilesModel.KPP" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutomobilesModel.Models" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutomobilesModel.Orders" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutomobilesModel.Users" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="158fb4af552144ce9f9316854873d616" Name="Diagram1">
+        <EntityTypeShape EntityType="ModelAutomobiles.Automobiles" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelAutomobiles.Brands" Width="1.5" PointX="0.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelAutomobiles.KPP" Width="1.5" PointX="0.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelAutomobiles.Models" Width="1.5" PointX="2.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelAutomobiles.Orders" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelAutomobiles.Users" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="ModelAutomobiles.FK_AUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelAutomobiles.FK_BRANDS" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelAutomobiles.FK_KPP" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelAutomobiles.FK_MODEL" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelAutomobiles.FK_USERS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ModelAutomobiles.Images" Width="1.5" PointX="4.25" PointY="4.625" />
+        <AssociationConnector Association="ModelAutomobiles.FK_IMAGES" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -14,7 +14,16 @@ namespace auto.DataBase
     
     public partial class Brands
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Brands()
+        {
+            this.Automobiles = new HashSet<Automobiles>();
+        }
+    
         public int idBrand { get; set; }
         public string nameBrand { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Automobiles> Automobiles { get; set; }
     }
 }

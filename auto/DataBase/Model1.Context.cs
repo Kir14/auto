@@ -13,10 +13,10 @@ namespace auto.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AutomobilesEntities : DbContext
+    public partial class EntitiesAutomobiles : DbContext
     {
-        public AutomobilesEntities()
-            : base("name=AutomobilesEntities")
+        public EntitiesAutomobiles()
+            : base("name=EntitiesAutomobiles")
         {
         }
     
@@ -31,5 +31,6 @@ namespace auto.DataBase
         public virtual DbSet<Models> Models { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Images> Images { get; set; }
     }
 }

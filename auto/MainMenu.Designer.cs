@@ -33,6 +33,7 @@
             this.iconButtonAbout = new FontAwesome.Sharp.IconButton();
             this.panelSubAuto = new System.Windows.Forms.Panel();
             this.btnEkoClasss = new FontAwesome.Sharp.IconButton();
+            this.btnSredClasss = new FontAwesome.Sharp.IconButton();
             this.bntBuzinesClass = new FontAwesome.Sharp.IconButton();
             this.iconButtonAuto = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -83,7 +84,7 @@
             this.iconButtonOption.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonOption.IconSize = 32;
             this.iconButtonOption.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOption.Location = new System.Drawing.Point(0, 428);
+            this.iconButtonOption.Location = new System.Drawing.Point(0, 440);
             this.iconButtonOption.Name = "iconButtonOption";
             this.iconButtonOption.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButtonOption.Rotation = 0D;
@@ -107,7 +108,7 @@
             this.iconButtonAbout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAbout.IconSize = 32;
             this.iconButtonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAbout.Location = new System.Drawing.Point(0, 368);
+            this.iconButtonAbout.Location = new System.Drawing.Point(0, 380);
             this.iconButtonAbout.Name = "iconButtonAbout";
             this.iconButtonAbout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButtonAbout.Rotation = 0D;
@@ -123,11 +124,12 @@
             // 
             this.panelSubAuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(22)))), ((int)(((byte)(70)))));
             this.panelSubAuto.Controls.Add(this.btnEkoClasss);
+            this.panelSubAuto.Controls.Add(this.btnSredClasss);
             this.panelSubAuto.Controls.Add(this.bntBuzinesClass);
             this.panelSubAuto.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubAuto.Location = new System.Drawing.Point(0, 200);
             this.panelSubAuto.Name = "panelSubAuto";
-            this.panelSubAuto.Size = new System.Drawing.Size(220, 168);
+            this.panelSubAuto.Size = new System.Drawing.Size(220, 180);
             this.panelSubAuto.TabIndex = 4;
             // 
             // btnEkoClasss
@@ -137,22 +139,46 @@
             this.btnEkoClasss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEkoClasss.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEkoClasss.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEkoClasss.IconChar = FontAwesome.Sharp.IconChar.CarAlt;
+            this.btnEkoClasss.IconChar = FontAwesome.Sharp.IconChar.CarSide;
             this.btnEkoClasss.IconColor = System.Drawing.Color.Gainsboro;
             this.btnEkoClasss.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEkoClasss.IconSize = 32;
             this.btnEkoClasss.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEkoClasss.Location = new System.Drawing.Point(0, 60);
+            this.btnEkoClasss.Location = new System.Drawing.Point(0, 120);
             this.btnEkoClasss.Name = "btnEkoClasss";
             this.btnEkoClasss.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
             this.btnEkoClasss.Rotation = 0D;
             this.btnEkoClasss.Size = new System.Drawing.Size(220, 60);
-            this.btnEkoClasss.TabIndex = 2;
+            this.btnEkoClasss.TabIndex = 3;
             this.btnEkoClasss.Text = "Эконом класс";
             this.btnEkoClasss.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEkoClasss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEkoClasss.UseVisualStyleBackColor = true;
-            this.btnEkoClasss.Click += new System.EventHandler(this.btnEkoClasss_Click);
+            this.btnEkoClasss.Click += new System.EventHandler(this.btnEkoClasss_Click_1);
+            // 
+            // btnSredClasss
+            // 
+            this.btnSredClasss.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSredClasss.FlatAppearance.BorderSize = 0;
+            this.btnSredClasss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSredClasss.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSredClasss.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSredClasss.IconChar = FontAwesome.Sharp.IconChar.CarAlt;
+            this.btnSredClasss.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnSredClasss.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSredClasss.IconSize = 32;
+            this.btnSredClasss.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSredClasss.Location = new System.Drawing.Point(0, 60);
+            this.btnSredClasss.Name = "btnSredClasss";
+            this.btnSredClasss.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
+            this.btnSredClasss.Rotation = 0D;
+            this.btnSredClasss.Size = new System.Drawing.Size(220, 60);
+            this.btnSredClasss.TabIndex = 2;
+            this.btnSredClasss.Text = "Средний класс";
+            this.btnSredClasss.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSredClasss.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSredClasss.UseVisualStyleBackColor = true;
+            this.btnSredClasss.Click += new System.EventHandler(this.btnEkoClasss_Click);
             // 
             // bntBuzinesClass
             // 
@@ -185,7 +211,7 @@
             this.iconButtonAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonAuto.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButtonAuto.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonAuto.IconChar = FontAwesome.Sharp.IconChar.Car;
+            this.iconButtonAuto.IconChar = FontAwesome.Sharp.IconChar.CarSide;
             this.iconButtonAuto.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonAuto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAuto.IconSize = 32;
@@ -372,6 +398,7 @@
         private FontAwesome.Sharp.IconPictureBox btnMinimaze;
         private System.Windows.Forms.Panel panelSubAuto;
         private FontAwesome.Sharp.IconButton bntBuzinesClass;
+        private FontAwesome.Sharp.IconButton btnSredClasss;
         private FontAwesome.Sharp.IconButton btnEkoClasss;
     }
 }

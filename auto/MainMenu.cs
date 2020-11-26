@@ -258,5 +258,10 @@ namespace auto
                 FormBorderStyle = FormBorderStyle.Sizable;
         }
 
+        private void btnEkoClasss_Click_1(object sender, EventArgs e)
+        {
+            ActivateSubButton(sender, RGBColors.color2);
+            OpenChildForm(new FormAuto());
+        }
     }
 }

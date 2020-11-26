@@ -12,18 +12,12 @@ namespace auto.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class KPP
+    public partial class Images
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KPP()
-        {
-            this.Automobiles = new HashSet<Automobiles>();
-        }
+        public int idImage { get; set; }
+        public string image { get; set; }
+        public Nullable<int> idAuto { get; set; }
     
-        public int idKPP { get; set; }
-        public string nameKPP { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Automobiles> Automobiles { get; set; }
+        public virtual Automobiles Automobiles { get; set; }
     }
 }
