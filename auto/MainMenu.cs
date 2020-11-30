@@ -263,5 +263,12 @@ namespace auto
             ActivateSubButton(sender, RGBColors.color2);
             OpenChildForm(new FormAuto());
         }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new FormAdd());
+        }
     }
 }

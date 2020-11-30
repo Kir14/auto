@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.addBtn = new FontAwesome.Sharp.IconButton();
             this.iconButtonOption = new FontAwesome.Sharp.IconButton();
             this.iconButtonAbout = new FontAwesome.Sharp.IconButton();
             this.panelSubAuto = new System.Windows.Forms.Panel();
@@ -61,6 +62,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.addBtn);
             this.panelMenu.Controls.Add(this.iconButtonOption);
             this.panelMenu.Controls.Add(this.iconButtonAbout);
             this.panelMenu.Controls.Add(this.panelSubAuto);
@@ -71,6 +73,30 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 545);
             this.panelMenu.TabIndex = 0;
+            // 
+            // addBtn
+            // 
+            this.addBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addBtn.FlatAppearance.BorderSize = 0;
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.addBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.addBtn.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.addBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.addBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.addBtn.IconSize = 32;
+            this.addBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addBtn.Location = new System.Drawing.Point(0, 500);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.addBtn.Rotation = 0D;
+            this.addBtn.Size = new System.Drawing.Size(199, 60);
+            this.addBtn.TabIndex = 5;
+            this.addBtn.Text = "Добавить";
+            this.addBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // iconButtonOption
             // 
@@ -88,7 +114,7 @@
             this.iconButtonOption.Name = "iconButtonOption";
             this.iconButtonOption.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButtonOption.Rotation = 0D;
-            this.iconButtonOption.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonOption.Size = new System.Drawing.Size(199, 60);
             this.iconButtonOption.TabIndex = 3;
             this.iconButtonOption.Text = "Настройки";
             this.iconButtonOption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,7 +138,7 @@
             this.iconButtonAbout.Name = "iconButtonAbout";
             this.iconButtonAbout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButtonAbout.Rotation = 0D;
-            this.iconButtonAbout.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonAbout.Size = new System.Drawing.Size(199, 60);
             this.iconButtonAbout.TabIndex = 2;
             this.iconButtonAbout.Text = "О нас";
             this.iconButtonAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,7 +155,7 @@
             this.panelSubAuto.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubAuto.Location = new System.Drawing.Point(0, 200);
             this.panelSubAuto.Name = "panelSubAuto";
-            this.panelSubAuto.Size = new System.Drawing.Size(220, 180);
+            this.panelSubAuto.Size = new System.Drawing.Size(199, 180);
             this.panelSubAuto.TabIndex = 4;
             // 
             // btnEkoClasss
@@ -148,7 +174,7 @@
             this.btnEkoClasss.Name = "btnEkoClasss";
             this.btnEkoClasss.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
             this.btnEkoClasss.Rotation = 0D;
-            this.btnEkoClasss.Size = new System.Drawing.Size(220, 60);
+            this.btnEkoClasss.Size = new System.Drawing.Size(199, 60);
             this.btnEkoClasss.TabIndex = 3;
             this.btnEkoClasss.Text = "Эконом класс";
             this.btnEkoClasss.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,7 +198,7 @@
             this.btnSredClasss.Name = "btnSredClasss";
             this.btnSredClasss.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
             this.btnSredClasss.Rotation = 0D;
-            this.btnSredClasss.Size = new System.Drawing.Size(220, 60);
+            this.btnSredClasss.Size = new System.Drawing.Size(199, 60);
             this.btnSredClasss.TabIndex = 2;
             this.btnSredClasss.Text = "Средний класс";
             this.btnSredClasss.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -196,7 +222,7 @@
             this.bntBuzinesClass.Name = "bntBuzinesClass";
             this.bntBuzinesClass.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
             this.bntBuzinesClass.Rotation = 0D;
-            this.bntBuzinesClass.Size = new System.Drawing.Size(220, 60);
+            this.bntBuzinesClass.Size = new System.Drawing.Size(199, 60);
             this.bntBuzinesClass.TabIndex = 0;
             this.bntBuzinesClass.Text = "Бизнес класс";
             this.bntBuzinesClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -220,7 +246,7 @@
             this.iconButtonAuto.Name = "iconButtonAuto";
             this.iconButtonAuto.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButtonAuto.Rotation = 0D;
-            this.iconButtonAuto.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonAuto.Size = new System.Drawing.Size(199, 60);
             this.iconButtonAuto.TabIndex = 1;
             this.iconButtonAuto.Text = "Автомобили";
             this.iconButtonAuto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,7 +260,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 140);
+            this.panelLogo.Size = new System.Drawing.Size(199, 140);
             this.panelLogo.TabIndex = 0;
             // 
             // btnHome
@@ -400,6 +426,7 @@
         private FontAwesome.Sharp.IconButton bntBuzinesClass;
         private FontAwesome.Sharp.IconButton btnSredClasss;
         private FontAwesome.Sharp.IconButton btnEkoClasss;
+        private FontAwesome.Sharp.IconButton addBtn;
     }
 }
 
