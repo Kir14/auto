@@ -67,5 +67,13 @@ namespace auto.Forms
 
             }
         }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+            FormInfoAuto f= new FormInfoAuto();
+            f.Show();
+        }
+
     }
 }

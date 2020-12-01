@@ -147,7 +147,7 @@ namespace auto
             }
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -197,7 +197,7 @@ namespace auto
         {
             HideSubMenu();
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new FormSetting());
+            OpenChildForm(new FormInfoAuto());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -269,6 +269,11 @@ namespace auto
             HideSubMenu();
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new FormAdd());
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            nameToolStripMenuItem.Text = "Kirill Kaleychik";
         }
     }
 }

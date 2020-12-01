@@ -43,10 +43,15 @@
             this.btnMinimaze = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximaze = new FontAwesome.Sharp.IconPictureBox();
             this.btnExit = new FontAwesome.Sharp.IconPictureBox();
-            this.labelTitleChildForm = new System.Windows.Forms.Label();
-            this.iconCorrectChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDekstop = new System.Windows.Forms.Panel();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iconCorrectChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.labelTitleChildForm = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelSubAuto.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -55,6 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimaze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximaze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.panelDekstop.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCorrectChildForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,12 +288,10 @@
             this.panelTitleBar.Controls.Add(this.btnMinimaze);
             this.panelTitleBar.Controls.Add(this.btnMaximaze);
             this.panelTitleBar.Controls.Add(this.btnExit);
-            this.panelTitleBar.Controls.Add(this.labelTitleChildForm);
-            this.panelTitleBar.Controls.Add(this.iconCorrectChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(868, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(868, 20);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -337,16 +343,80 @@
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // labelTitleChildForm
+            // panelDekstop
             // 
-            this.labelTitleChildForm.AutoSize = true;
-            this.labelTitleChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTitleChildForm.ForeColor = System.Drawing.Color.Violet;
-            this.labelTitleChildForm.Location = new System.Drawing.Point(57, 24);
-            this.labelTitleChildForm.Name = "labelTitleChildForm";
-            this.labelTitleChildForm.Size = new System.Drawing.Size(78, 29);
-            this.labelTitleChildForm.TabIndex = 1;
-            this.labelTitleChildForm.Text = "Home";
+            this.panelDekstop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
+            this.panelDekstop.Controls.Add(this.panelShadow);
+            this.panelDekstop.Controls.Add(this.panel1);
+            this.panelDekstop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDekstop.Location = new System.Drawing.Point(220, 20);
+            this.panelDekstop.Name = "panelDekstop";
+            this.panelDekstop.Size = new System.Drawing.Size(868, 525);
+            this.panelDekstop.TabIndex = 3;
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(0, 60);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(868, 9);
+            this.panelShadow.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.Controls.Add(this.iconCorrectChildForm);
+            this.panel1.Controls.Add(this.labelTitleChildForm);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(868, 60);
+            this.panel1.TabIndex = 2;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nameToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(712, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(156, 60);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // nameToolStripMenuItem
+            // 
+            this.nameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.nameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.заказыToolStripMenuItem,
+            this.выходToolStripMenuItem});
+            this.nameToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
+            this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.nameToolStripMenuItem.Text = "Name";
+            // 
+            // заказыToolStripMenuItem
+            // 
+            this.заказыToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.заказыToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
+            this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
+            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.заказыToolStripMenuItem.Text = "Заказы";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.выходToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // iconCorrectChildForm
             // 
@@ -355,30 +425,22 @@
             this.iconCorrectChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCorrectChildForm.IconColor = System.Drawing.Color.Violet;
             this.iconCorrectChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCorrectChildForm.Location = new System.Drawing.Point(19, 24);
+            this.iconCorrectChildForm.Location = new System.Drawing.Point(28, 6);
             this.iconCorrectChildForm.Name = "iconCorrectChildForm";
             this.iconCorrectChildForm.Size = new System.Drawing.Size(32, 32);
             this.iconCorrectChildForm.TabIndex = 0;
             this.iconCorrectChildForm.TabStop = false;
             // 
-            // panelShadow
+            // labelTitleChildForm
             // 
-            this.panelShadow.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(220, 80);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(868, 9);
-            this.panelShadow.TabIndex = 2;
-            // 
-            // panelDekstop
-            // 
-            this.panelDekstop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
-            this.panelDekstop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDekstop.Location = new System.Drawing.Point(220, 89);
-            this.panelDekstop.Name = "panelDekstop";
-            this.panelDekstop.Size = new System.Drawing.Size(868, 456);
-            this.panelDekstop.TabIndex = 3;
+            this.labelTitleChildForm.AutoSize = true;
+            this.labelTitleChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTitleChildForm.ForeColor = System.Drawing.Color.Violet;
+            this.labelTitleChildForm.Location = new System.Drawing.Point(66, 9);
+            this.labelTitleChildForm.Name = "labelTitleChildForm";
+            this.labelTitleChildForm.Size = new System.Drawing.Size(78, 29);
+            this.labelTitleChildForm.TabIndex = 1;
+            this.labelTitleChildForm.Text = "Home";
             // 
             // MainMenu
             // 
@@ -387,7 +449,6 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(1088, 545);
             this.Controls.Add(this.panelDekstop);
-            this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "MainMenu";
@@ -397,10 +458,14 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimaze)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximaze)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            this.panelDekstop.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCorrectChildForm)).EndInit();
             this.ResumeLayout(false);
 
@@ -415,9 +480,6 @@
         private FontAwesome.Sharp.IconButton iconButtonAbout;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelTitleBar;
-        private FontAwesome.Sharp.IconPictureBox iconCorrectChildForm;
-        private System.Windows.Forms.Label labelTitleChildForm;
-        private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDekstop;
         private FontAwesome.Sharp.IconPictureBox btnExit;
         private FontAwesome.Sharp.IconPictureBox btnMaximaze;
@@ -427,6 +489,14 @@
         private FontAwesome.Sharp.IconButton btnSredClasss;
         private FontAwesome.Sharp.IconButton btnEkoClasss;
         private FontAwesome.Sharp.IconButton addBtn;
+        private System.Windows.Forms.Panel panelShadow;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem заказыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private FontAwesome.Sharp.IconPictureBox iconCorrectChildForm;
+        private System.Windows.Forms.Label labelTitleChildForm;
     }
 }
 
