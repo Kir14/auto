@@ -59,6 +59,7 @@ namespace auto.Forms
                 // установка названия файла
                 ListViewItem lvi = new ListViewItem();
                 //lvi.Text = file.Remove(0, file.LastIndexOf('\\') + 1);
+                lvi.Tag = auto.idAuto;
                 lvi.Text = auto.Brands.nameBrand + "   " + auto.Models.nameModel;
                 lvi.ImageIndex = i; // установка картинки для файла
                 i++;
@@ -70,10 +71,9 @@ namespace auto.Forms
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
-            FormInfoAuto f= new FormInfoAuto();
+            ListViewItem lvi= listView1.FocusedItem;
+            FormInfoAuto f = new FormInfoAuto(Int32.Parse(lvi.Tag.ToString()));
             f.Show();
         }
-
     }
 }
