@@ -52,6 +52,7 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconCorrectChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
+            this.btnSignin = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubAuto.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -367,6 +368,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.btnSignin);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Controls.Add(this.iconCorrectChildForm);
             this.panel1.Controls.Add(this.labelTitleChildForm);
@@ -383,9 +385,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nameToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(712, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(767, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 60);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 8, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(101, 60);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -398,7 +401,7 @@
             this.nameToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
             this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
-            this.nameToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(86, 36);
             this.nameToolStripMenuItem.Text = "Name";
             // 
             // заказыToolStripMenuItem
@@ -406,7 +409,7 @@
             this.заказыToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.заказыToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
             this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
-            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
             this.заказыToolStripMenuItem.Text = "Заказы";
             // 
             // выходToolStripMenuItem
@@ -441,6 +444,30 @@
             this.labelTitleChildForm.Size = new System.Drawing.Size(78, 29);
             this.labelTitleChildForm.TabIndex = 1;
             this.labelTitleChildForm.Text = "Home";
+            // 
+            // btnSignin
+            // 
+            this.btnSignin.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSignin.FlatAppearance.BorderSize = 0;
+            this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignin.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSignin.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSignin.ForeColor = System.Drawing.Color.Violet;
+            this.btnSignin.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.btnSignin.IconColor = System.Drawing.Color.Violet;
+            this.btnSignin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSignin.IconSize = 32;
+            this.btnSignin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSignin.Location = new System.Drawing.Point(603, 0);
+            this.btnSignin.Name = "btnSignin";
+            this.btnSignin.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnSignin.Rotation = 0D;
+            this.btnSignin.Size = new System.Drawing.Size(164, 60);
+            this.btnSignin.TabIndex = 3;
+            this.btnSignin.Text = "Войти";
+            this.btnSignin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSignin.UseVisualStyleBackColor = true;
+            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
             // 
             // MainMenu
             // 
@@ -497,6 +524,7 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private FontAwesome.Sharp.IconPictureBox iconCorrectChildForm;
         private System.Windows.Forms.Label labelTitleChildForm;
+        private FontAwesome.Sharp.IconButton btnSignin;
     }
 }
 

@@ -67,7 +67,11 @@
           <Property Name="secondName" Type="varchar" MaxLength="100" />
           <Property Name="middleName" Type="varchar" MaxLength="100" />
           <Property Name="numberDrivingLicense" Type="varchar" MaxLength="100" />
+          <Property Name="login" Type="varchar" MaxLength="100" />
+          <Property Name="password" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
           <Property Name="tel" Type="varchar" MaxLength="100" />
+          <Property Name="admin" Type="bit" />
         </EntityType>
         <Association Name="FK_AUTO">
           <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="0..1" />
@@ -244,6 +248,10 @@
           <Property Name="numberDrivingLicense" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="tel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_USERS" FromRole="Users" ToRole="Orders" />
+          <Property Name="login" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="admin" Type="Boolean" />
         </EntityType>
         <Association Name="FK_AUTO">
           <End Role="Automobiles" Type="Self.Automobiles" Multiplicity="0..1" />
@@ -418,6 +426,10 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="ModelAutomobiles.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="admin" ColumnName="admin" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
                 <ScalarProperty Name="secondName" ColumnName="secondName" />

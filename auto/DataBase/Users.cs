@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace auto.DataBase
+namespace auto
 {
     using System;
     using System.Collections.Generic;
@@ -26,6 +26,10 @@ namespace auto.DataBase
         public string middleName { get; set; }
         public string numberDrivingLicense { get; set; }
         public string tel { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public Nullable<bool> admin { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

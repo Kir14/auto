@@ -21,6 +21,9 @@ namespace auto
         private Panel leftBorderSubBtn;
         private Form currentChildForm;
 
+        private string user;
+        private int idUser=0;
+
         public MainMenu()
         {
             InitializeComponent();
@@ -36,6 +39,8 @@ namespace auto
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            menuStrip1.Visible = false;
 
         }
 
@@ -191,6 +196,7 @@ namespace auto
             HideSubMenu();
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new FormAbout());
+            
         }
 
         private void iconButtonOption_Click(object sender, EventArgs e)
@@ -273,7 +279,26 @@ namespace auto
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            nameToolStripMenuItem.Text = "Kirill Kaleychik";
+            menuStrip1.Visible = false;
+            user = "";
+            idUser = 0;
+            btnSignin.Visible = true;
+        }
+
+        public void Login(string name, int id)
+        {
+            user = name;
+            idUser = id;
+
+            nameToolStripMenuItem.Text = name;
+            menuStrip1.Visible = true;
+            btnSignin.Visible = false;
+        }
+
+        private void btnSignin_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin(this);
+            login.Show();
         }
     }
 }
