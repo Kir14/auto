@@ -31,7 +31,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.addBtn = new FontAwesome.Sharp.IconButton();
             this.iconButtonOption = new FontAwesome.Sharp.IconButton();
-            this.iconButtonAbout = new FontAwesome.Sharp.IconButton();
+            this.iconButtonUsers = new FontAwesome.Sharp.IconButton();
             this.panelSubAuto = new System.Windows.Forms.Panel();
             this.btnEkoClasss = new FontAwesome.Sharp.IconButton();
             this.btnSredClasss = new FontAwesome.Sharp.IconButton();
@@ -46,13 +46,13 @@
             this.panelDekstop = new System.Windows.Forms.Panel();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSignin = new FontAwesome.Sharp.IconButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconCorrectChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
-            this.btnSignin = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubAuto.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -73,7 +73,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.addBtn);
             this.panelMenu.Controls.Add(this.iconButtonOption);
-            this.panelMenu.Controls.Add(this.iconButtonAbout);
+            this.panelMenu.Controls.Add(this.iconButtonUsers);
             this.panelMenu.Controls.Add(this.panelSubAuto);
             this.panelMenu.Controls.Add(this.iconButtonAuto);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -131,29 +131,29 @@
             this.iconButtonOption.UseVisualStyleBackColor = true;
             this.iconButtonOption.Click += new System.EventHandler(this.iconButtonOption_Click);
             // 
-            // iconButtonAbout
+            // iconButtonUsers
             // 
-            this.iconButtonAbout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonAbout.FlatAppearance.BorderSize = 0;
-            this.iconButtonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonAbout.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonAbout.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonAbout.IconChar = FontAwesome.Sharp.IconChar.Earlybirds;
-            this.iconButtonAbout.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonAbout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAbout.IconSize = 32;
-            this.iconButtonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAbout.Location = new System.Drawing.Point(0, 380);
-            this.iconButtonAbout.Name = "iconButtonAbout";
-            this.iconButtonAbout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButtonAbout.Rotation = 0D;
-            this.iconButtonAbout.Size = new System.Drawing.Size(199, 60);
-            this.iconButtonAbout.TabIndex = 2;
-            this.iconButtonAbout.Text = "О нас";
-            this.iconButtonAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonAbout.UseVisualStyleBackColor = true;
-            this.iconButtonAbout.Click += new System.EventHandler(this.iconButtonAbout_Click);
+            this.iconButtonUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonUsers.FlatAppearance.BorderSize = 0;
+            this.iconButtonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonUsers.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonUsers.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonUsers.IconChar = FontAwesome.Sharp.IconChar.Earlybirds;
+            this.iconButtonUsers.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonUsers.IconSize = 32;
+            this.iconButtonUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonUsers.Location = new System.Drawing.Point(0, 380);
+            this.iconButtonUsers.Name = "iconButtonUsers";
+            this.iconButtonUsers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonUsers.Rotation = 0D;
+            this.iconButtonUsers.Size = new System.Drawing.Size(199, 60);
+            this.iconButtonUsers.TabIndex = 2;
+            this.iconButtonUsers.Text = "Пользователи";
+            this.iconButtonUsers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonUsers.UseVisualStyleBackColor = true;
+            this.iconButtonUsers.Click += new System.EventHandler(this.iconButtonUsers_Click);
             // 
             // panelSubAuto
             // 
@@ -378,6 +378,30 @@
             this.panel1.Size = new System.Drawing.Size(868, 60);
             this.panel1.TabIndex = 2;
             // 
+            // btnSignin
+            // 
+            this.btnSignin.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSignin.FlatAppearance.BorderSize = 0;
+            this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignin.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSignin.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSignin.ForeColor = System.Drawing.Color.Violet;
+            this.btnSignin.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.btnSignin.IconColor = System.Drawing.Color.Violet;
+            this.btnSignin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSignin.IconSize = 32;
+            this.btnSignin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSignin.Location = new System.Drawing.Point(603, 0);
+            this.btnSignin.Name = "btnSignin";
+            this.btnSignin.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnSignin.Rotation = 0D;
+            this.btnSignin.Size = new System.Drawing.Size(164, 60);
+            this.btnSignin.TabIndex = 3;
+            this.btnSignin.Text = "Войти";
+            this.btnSignin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSignin.UseVisualStyleBackColor = true;
+            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
@@ -401,7 +425,7 @@
             this.nameToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
             this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
-            this.nameToolStripMenuItem.Size = new System.Drawing.Size(86, 36);
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(84, 36);
             this.nameToolStripMenuItem.Text = "Name";
             // 
             // заказыToolStripMenuItem
@@ -409,7 +433,7 @@
             this.заказыToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.заказыToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
             this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
-            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(181, 36);
             this.заказыToolStripMenuItem.Text = "Заказы";
             // 
             // выходToolStripMenuItem
@@ -417,7 +441,7 @@
             this.выходToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.выходToolStripMenuItem.ForeColor = System.Drawing.Color.Violet;
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(181, 36);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -444,30 +468,6 @@
             this.labelTitleChildForm.Size = new System.Drawing.Size(78, 29);
             this.labelTitleChildForm.TabIndex = 1;
             this.labelTitleChildForm.Text = "Home";
-            // 
-            // btnSignin
-            // 
-            this.btnSignin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSignin.FlatAppearance.BorderSize = 0;
-            this.btnSignin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignin.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnSignin.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSignin.ForeColor = System.Drawing.Color.Violet;
-            this.btnSignin.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
-            this.btnSignin.IconColor = System.Drawing.Color.Violet;
-            this.btnSignin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSignin.IconSize = 32;
-            this.btnSignin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSignin.Location = new System.Drawing.Point(603, 0);
-            this.btnSignin.Name = "btnSignin";
-            this.btnSignin.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnSignin.Rotation = 0D;
-            this.btnSignin.Size = new System.Drawing.Size(164, 60);
-            this.btnSignin.TabIndex = 3;
-            this.btnSignin.Text = "Войти";
-            this.btnSignin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSignin.UseVisualStyleBackColor = true;
-            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
             // 
             // MainMenu
             // 
@@ -504,7 +504,7 @@
         private FontAwesome.Sharp.IconButton iconButtonAuto;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton iconButtonOption;
-        private FontAwesome.Sharp.IconButton iconButtonAbout;
+        private FontAwesome.Sharp.IconButton iconButtonUsers;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Panel panelDekstop;

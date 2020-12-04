@@ -27,6 +27,8 @@ namespace auto
         public MainMenu()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+
             CustomizaDesign();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
@@ -41,6 +43,7 @@ namespace auto
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             menuStrip1.Visible = false;
+
 
         }
 
@@ -98,6 +101,7 @@ namespace auto
                 //Icon Current CHild Form
                 iconCorrectChildForm.IconChar = currentBtn.IconChar;
                 iconCorrectChildForm.IconColor = color;
+                labelTitleChildForm.Text = currentBtn.Text;
             }
         }
 
@@ -136,6 +140,7 @@ namespace auto
                 //Icon Current CHild Form
                 iconCorrectChildForm.IconChar = currentBtn.IconChar;
                 iconCorrectChildForm.IconColor = color;
+                
             }
         }
 
@@ -167,7 +172,7 @@ namespace auto
             panelDekstop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            labelTitleChildForm.Text = childForm.Text;
+            //labelTitleChildForm.Text = childForm.Text;
         }
 
         private void iconButtonAuto_Click(object sender, EventArgs e)
@@ -191,12 +196,12 @@ namespace auto
             OpenChildForm(new FormAuto());
         }
 
-        private void iconButtonAbout_Click(object sender, EventArgs e)
+        private void iconButtonUsers_Click(object sender, EventArgs e)
         {
             HideSubMenu();
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new FormAbout());
-            
+            OpenChildForm(new FormUsers());
+
         }
 
         private void iconButtonOption_Click(object sender, EventArgs e)
