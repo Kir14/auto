@@ -54,6 +54,7 @@
           <Property Name="idOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idAuto" Type="int" />
           <Property Name="idUser" Type="int" />
+          <Property Name="cost" Type="decimal" Precision="5" Scale="2" />
           <Property Name="dateOrder" Type="date" />
           <Property Name="dateStart" Type="date" />
           <Property Name="dateFinish" Type="date" />
@@ -236,6 +237,7 @@
           <Property Name="dateFinish" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Automobiles" Relationship="Self.FK_AUTO" FromRole="Orders" ToRole="Automobiles" />
           <NavigationProperty Name="Users" Relationship="Self.FK_USERS" FromRole="Orders" ToRole="Users" />
+          <Property Name="cost" Type="Decimal" Precision="5" Scale="2" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -414,6 +416,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="ModelAutomobiles.Orders">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="cost" ColumnName="cost" />
                 <ScalarProperty Name="idOrder" ColumnName="idOrder" />
                 <ScalarProperty Name="idAuto" ColumnName="idAuto" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />

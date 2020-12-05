@@ -178,7 +178,7 @@ namespace auto
         private void iconButtonAuto_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormAuto());
+            OpenChildForm(new FormAuto(idUser));
             ShowSubMenu(panelSubAuto);
         }
 

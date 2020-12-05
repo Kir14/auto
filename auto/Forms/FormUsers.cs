@@ -38,20 +38,36 @@ namespace auto.Forms
             dataGridView1.Columns[8].HeaderText = "Почта";
             dataGridView1.Columns[9].HeaderText = "Администратор";
 
+            //DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
+            //col.TrueValue = 1;
+            //col.FalseValue = 0;
+
+            //dataGridView1.Columns.Add(col);
+            //dataGridView1.Columns[11].HeaderText = "Администратор";
+
             int n = dataGridView1.Columns.Count;
-            for(int i=0; i<n;i++)
+            for (int i = 0; i < n; i++)
             {
                 dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                
-
-                
             }
+
+            //n = dataGridView1.Rows.Count;
+            //for (int i = 0; i < n; n++)
+            //{
+            //    dataGridView1.Rows[i].Cells[11].Value = "1";
+            //}
+
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[11];
+            //    chk.Value = 1;
+            //}
 
             dataGridView1.Columns[0].ReadOnly = true;
 
-            dataGridView1.Columns[7].Visible=false;
+            dataGridView1.Columns[7].Visible = false;
 
-            dataGridView1.Columns[10].Visible = false; ;
+            dataGridView1.Columns[10].Visible = false;
 
 
         }

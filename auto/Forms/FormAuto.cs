@@ -15,12 +15,23 @@ namespace auto.Forms
 {
     public partial class FormAuto : Form
     {
+        int idUser = 0;
+
         public FormAuto()
         {
             InitializeComponent();
 
             LoadBd();
         }
+
+        public FormAuto(int iduser)
+        {
+            InitializeComponent();
+
+            idUser = iduser;
+            LoadBd();
+        }
+
 
         public void LoadBd()
         {
@@ -72,7 +83,7 @@ namespace auto.Forms
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ListViewItem lvi= listView1.FocusedItem;
-            FormInfoAuto f = new FormInfoAuto(Int32.Parse(lvi.Tag.ToString()));
+            FormInfoAuto f = new FormInfoAuto(Int32.Parse(lvi.Tag.ToString()),idUser);
             f.Show();
         }
     }
