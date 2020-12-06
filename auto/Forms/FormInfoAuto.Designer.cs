@@ -51,6 +51,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.labelMessage = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimaze)).BeginInit();
@@ -69,6 +70,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.labelMessage);
             this.panel1.Controls.Add(this.panelTitleBar);
             this.panel1.Controls.Add(this.iconButtonOrder);
             this.panel1.Controls.Add(this.labelPrice);
@@ -334,9 +336,9 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
-            this.pictureBox1.Location = new System.Drawing.Point(320, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(320, 64);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(472, 353);
+            this.pictureBox1.Size = new System.Drawing.Size(472, 318);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
@@ -346,6 +348,17 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // labelMessage
+            // 
+            this.labelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
+            this.labelMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelMessage.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMessage.Location = new System.Drawing.Point(136, 27);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(848, 31);
+            this.labelMessage.TabIndex = 36;
+            this.labelMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormInfoAuto
             // 
@@ -394,5 +407,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TextBox labelMessage;
     }
 }

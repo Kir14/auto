@@ -130,11 +130,23 @@
     <Compile Include="Forms\FormMessage.Designer.cs">
       <DependentUpon>FormMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormOrders.Designer.cs">
+      <DependentUpon>FormOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormRegistration.Designer.cs">
       <DependentUpon>FormRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRent.Designer.cs">
+      <DependentUpon>FormRent.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSetting.cs">
       <SubType>Form</SubType>
@@ -148,6 +160,7 @@
     <Compile Include="Forms\FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoUser.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,8 +184,14 @@
     <EmbeddedResource Include="Forms\FormMessage.resx">
       <DependentUpon>FormMessage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormOrders.resx">
+      <DependentUpon>FormOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRegistration.resx">
       <DependentUpon>FormRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRent.resx">
+      <DependentUpon>FormRent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>

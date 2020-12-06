@@ -36,6 +36,9 @@ namespace auto.Forms
             {
                 string name = user.firstName + " " + user.secondName;
                 menu.Login(name, user.idUser);
+                InfoUser info = new InfoUser();
+                info.setIdUser(user.idUser);
+                info.setUserName(name);
                 this.Dispose();
             }
         }

@@ -1,4 +1,5 @@
-﻿using auto.Forms;
+﻿using auto.DataBase;
+using auto.Forms;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,10 @@ namespace auto
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
+
+            addBtn.Visible = false;
+            iconButtonOrders.Visible = false;
+            iconButtonUsers.Visible = false;
 
             CustomizaDesign();
             leftBorderBtn = new Panel();
@@ -186,14 +191,14 @@ namespace auto
         private void bntBuzinesClass_Click(object sender, EventArgs e)
         {
             ActivateSubButton(sender, RGBColors.color2);
-            OpenChildForm(new FormAuto());
+            OpenChildForm(new FormAuto(idUser,"Бизнес"));
         }
 
 
         private void btnEkoClasss_Click(object sender, EventArgs e)
         {
             ActivateSubButton(sender, RGBColors.color2);
-            OpenChildForm(new FormAuto());
+            OpenChildForm(new FormAuto(idUser,"Средний"));
         }
 
         private void iconButtonUsers_Click(object sender, EventArgs e)
@@ -204,11 +209,11 @@ namespace auto
 
         }
 
-        private void iconButtonOption_Click(object sender, EventArgs e)
+        private void iconButtonOrders_Click(object sender, EventArgs e)
         {
             HideSubMenu();
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new FormInfoAuto());
+            OpenChildForm(new FormOrders());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -272,7 +277,7 @@ namespace auto
         private void btnEkoClasss_Click_1(object sender, EventArgs e)
         {
             ActivateSubButton(sender, RGBColors.color2);
-            OpenChildForm(new FormAuto());
+            OpenChildForm(new FormAuto(idUser, "Эконом"));
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -284,6 +289,8 @@ namespace auto
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            InfoUser info = new InfoUser();
+            info.setIdUser(0);
             menuStrip1.Visible = false;
             user = "";
             idUser = 0;
@@ -294,10 +301,26 @@ namespace auto
         {
             user = name;
             idUser = id;
-
+            EntitiesAutomobiles automobiles = new EntitiesAutomobiles();
+            Users users = automobiles.Users.Where(x => x.idUser == idUser).FirstOrDefault();
             nameToolStripMenuItem.Text = name;
             menuStrip1.Visible = true;
             btnSignin.Visible = false;
+
+            if(users.admin.Value)
+            {
+                addBtn.Visible = true;
+                iconButtonOrders.Visible = true;
+                iconButtonUsers.Visible = true;
+                iconRent.Visible = false;
+            }
+            else
+            {
+                addBtn.Visible = false;
+                iconButtonOrders.Visible = false;
+                iconButtonUsers.Visible = false;
+                iconRent.Visible = true;
+            }
         }
 
         private void btnSignin_Click(object sender, EventArgs e)

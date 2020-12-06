@@ -32,7 +32,8 @@ namespace auto.Forms
         {
             InitializeComponent();
 
-            idUser = iduser;
+            InfoUser info = new InfoUser();
+            idUser = info.getidUser();
             idAuto = idauto;
 
             labelBrand.ReadOnly = true;
@@ -135,12 +136,47 @@ namespace auto.Forms
             order.dateOrder = DateTime.Now;
             order.dateStart = dateTimeStart.Value;
             order.dateFinish = dateTimeFinish.Value;
-            int n=0;
-            n = (dateTimeFinish.Value-dateTimeStart.Value).Days+1;
-            order.cost = automobiles.Automobiles.Where(z=>z.idAuto==idAuto).Select(x=>x.price).FirstOrDefault()*n;
+            int n = 0;
+            n = (dateTimeFinish.Value - dateTimeStart.Value).Days + 1;
+            order.cost = automobiles.Automobiles.Where(z => z.idAuto == idAuto).Select(x => x.price).FirstOrDefault() * n;
 
-            automobiles.Orders.Add(order);
+            bool add = false;
+            DateTime start=DateTime.Now, finish=DateTime.Now;
+            if (automobiles.Orders.Where(x => x.idAuto == idAuto).Count() == 0)
+            {
+                add = true;
+            }
+            
+            foreach (Orders ord in automobiles.Orders.Where(x => x.idAuto == idAuto))
+            {
+                if ((order.dateStart.Value.Date >= ord.dateStart.Value.Date && order.dateStart.Value.Date <= ord.dateFinish.Value.Date) ||
+                    (order.dateFinish.Value.Date >= ord.dateStart.Value.Date && order.dateFinish.Value.Date <= ord.dateFinish.Value.Date) ||
+                    (ord.dateStart.Value.Date >= order.dateStart.Value.Date && ord.dateStart.Value.Date <= order.dateFinish.Value.Date) ||
+                    (ord.dateFinish.Value.Date >= order.dateStart.Value.Date && ord.dateFinish.Value.Date <= order.dateFinish.Value.Date))
+                {
+                    start = ord.dateStart.Value.Date;
+                    finish = ord.dateFinish.Value.Date;
+                    add = false;
+                    break;
+                }
+                else
+                {
+                    add = true;
+                }
+            }
+            if(add)
+            {
+                labelMessage.ForeColor = Color.GreenYellow;
+                labelMessage.Text = "Авто забронированно";
+                automobiles.Orders.Add(order);
+            }
+            else
+            {
+                labelMessage.ForeColor = Color.Red;
+                labelMessage.Text = "Автомобиль уже забронирован с " + start.Date.ToString() + " до " + finish.Date.ToString();
+            }
             automobiles.SaveChanges();
+
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.addBtn = new FontAwesome.Sharp.IconButton();
-            this.iconButtonOption = new FontAwesome.Sharp.IconButton();
+            this.iconButtonOrders = new FontAwesome.Sharp.IconButton();
             this.iconButtonUsers = new FontAwesome.Sharp.IconButton();
             this.panelSubAuto = new System.Windows.Forms.Panel();
             this.btnEkoClasss = new FontAwesome.Sharp.IconButton();
@@ -53,6 +53,7 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconCorrectChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
+            this.iconRent = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubAuto.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -71,8 +72,9 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconRent);
             this.panelMenu.Controls.Add(this.addBtn);
-            this.panelMenu.Controls.Add(this.iconButtonOption);
+            this.panelMenu.Controls.Add(this.iconButtonOrders);
             this.panelMenu.Controls.Add(this.iconButtonUsers);
             this.panelMenu.Controls.Add(this.panelSubAuto);
             this.panelMenu.Controls.Add(this.iconButtonAuto);
@@ -107,29 +109,29 @@
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // iconButtonOption
+            // iconButtonOrders
             // 
-            this.iconButtonOption.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonOption.FlatAppearance.BorderSize = 0;
-            this.iconButtonOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonOption.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonOption.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOption.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.iconButtonOption.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonOption.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonOption.IconSize = 32;
-            this.iconButtonOption.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOption.Location = new System.Drawing.Point(0, 440);
-            this.iconButtonOption.Name = "iconButtonOption";
-            this.iconButtonOption.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButtonOption.Rotation = 0D;
-            this.iconButtonOption.Size = new System.Drawing.Size(199, 60);
-            this.iconButtonOption.TabIndex = 3;
-            this.iconButtonOption.Text = "Настройки";
-            this.iconButtonOption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonOption.UseVisualStyleBackColor = true;
-            this.iconButtonOption.Click += new System.EventHandler(this.iconButtonOption_Click);
+            this.iconButtonOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonOrders.FlatAppearance.BorderSize = 0;
+            this.iconButtonOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonOrders.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonOrders.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOrders.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
+            this.iconButtonOrders.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOrders.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonOrders.IconSize = 32;
+            this.iconButtonOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOrders.Location = new System.Drawing.Point(0, 440);
+            this.iconButtonOrders.Name = "iconButtonOrders";
+            this.iconButtonOrders.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonOrders.Rotation = 0D;
+            this.iconButtonOrders.Size = new System.Drawing.Size(199, 60);
+            this.iconButtonOrders.TabIndex = 3;
+            this.iconButtonOrders.Text = "Заказы";
+            this.iconButtonOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonOrders.UseVisualStyleBackColor = true;
+            this.iconButtonOrders.Click += new System.EventHandler(this.iconButtonOrders_Click);
             // 
             // iconButtonUsers
             // 
@@ -469,6 +471,29 @@
             this.labelTitleChildForm.TabIndex = 1;
             this.labelTitleChildForm.Text = "Home";
             // 
+            // iconRent
+            // 
+            this.iconRent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconRent.FlatAppearance.BorderSize = 0;
+            this.iconRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconRent.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconRent.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconRent.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
+            this.iconRent.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconRent.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconRent.IconSize = 32;
+            this.iconRent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconRent.Location = new System.Drawing.Point(0, 560);
+            this.iconRent.Name = "iconRent";
+            this.iconRent.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconRent.Rotation = 0D;
+            this.iconRent.Size = new System.Drawing.Size(199, 60);
+            this.iconRent.TabIndex = 6;
+            this.iconRent.Text = "Заказы";
+            this.iconRent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconRent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconRent.UseVisualStyleBackColor = true;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -503,7 +528,7 @@
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton iconButtonAuto;
         private System.Windows.Forms.Panel panelLogo;
-        private FontAwesome.Sharp.IconButton iconButtonOption;
+        private FontAwesome.Sharp.IconButton iconButtonOrders;
         private FontAwesome.Sharp.IconButton iconButtonUsers;
         private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelTitleBar;
@@ -525,6 +550,7 @@
         private FontAwesome.Sharp.IconPictureBox iconCorrectChildForm;
         private System.Windows.Forms.Label labelTitleChildForm;
         private FontAwesome.Sharp.IconButton btnSignin;
+        private FontAwesome.Sharp.IconButton iconRent;
     }
 }
 

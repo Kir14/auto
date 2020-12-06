@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace auto
+namespace auto.DataBase
 {
     using System;
     using System.Collections.Generic;
