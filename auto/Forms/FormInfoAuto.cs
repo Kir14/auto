@@ -14,9 +14,11 @@ namespace auto.Forms
 {
     public partial class FormInfoAuto : Form
     {
+        int i = 0;
         int idUser = 0;
         int idAuto = 0;
         Automobiles auto;
+        EntitiesAutomobiles automobiles;
 
         public FormInfoAuto()
         {
@@ -31,17 +33,35 @@ namespace auto.Forms
         public FormInfoAuto(int idauto, int iduser)
         {
             InitializeComponent();
+            automobiles = new EntitiesAutomobiles();
 
             InfoUser info = new InfoUser();
+
             idUser = info.getidUser();
+            Users user = automobiles.Users.Where(x => x.idUser == idUser).FirstOrDefault();
+            
             idAuto = idauto;
 
-            labelBrand.ReadOnly = true;
-            labelModel.ReadOnly = true;
-            labelYear.ReadOnly = true;
-            labelPrice.ReadOnly = true;
+            if (user.admin.Value)
+            {
+                iconButtonOrder.Visible = false;
+                btnIzm.Visible = true;
+                labelBrand.ReadOnly = false;
+                labelModel.ReadOnly = false;
+                labelYear.ReadOnly = false;
+                labelPrice.ReadOnly = false;
+            }
+            else
+            {
+                iconButton1.Visible = false;
+                iconButton2.Visible = false;
+                btnIzm.Visible = false;
+                labelBrand.ReadOnly = true;
+                labelModel.ReadOnly = true;
+                labelYear.ReadOnly = true;
+                labelPrice.ReadOnly = true;
+            }
 
-            EntitiesAutomobiles automobiles = new EntitiesAutomobiles();
             auto = automobiles.Automobiles.Where(x => x.idAuto == idAuto).FirstOrDefault();
 
             listView1.LargeImageList = imageList1;
@@ -50,12 +70,13 @@ namespace auto.Forms
             List<string> images = auto.Images.
                     Where(x => x.idAuto == auto.idAuto)
                     .Select(x => x.image).ToList();
-            int i = 0;
+            int j = 0;
             foreach (string el in images)
             {
                 try
                 {
                     imageList1.Images.Add(Image.FromFile(el));
+                    i++;
                 }
                 catch
                 {
@@ -73,10 +94,10 @@ namespace auto.Forms
                 //lvi.Text = file.Remove(0, file.LastIndexOf('\\') + 1);
 
                 lvi.Tag = el;
-                lvi.ImageIndex = i; // установка картинки для файла
+                lvi.ImageIndex = j; // установка картинки для файла
 
                 listView1.Items.Add(lvi);
-                i++;
+                j++;
             }
             labelBrand.Text = auto.Brands.nameBrand;
             labelModel.Text = auto.Models.nameModel;
@@ -141,12 +162,12 @@ namespace auto.Forms
             order.cost = automobiles.Automobiles.Where(z => z.idAuto == idAuto).Select(x => x.price).FirstOrDefault() * n;
 
             bool add = false;
-            DateTime start=DateTime.Now, finish=DateTime.Now;
+            DateTime start = DateTime.Now, finish = DateTime.Now;
             if (automobiles.Orders.Where(x => x.idAuto == idAuto).Count() == 0)
             {
                 add = true;
             }
-            
+
             foreach (Orders ord in automobiles.Orders.Where(x => x.idAuto == idAuto))
             {
                 if ((order.dateStart.Value.Date >= ord.dateStart.Value.Date && order.dateStart.Value.Date <= ord.dateFinish.Value.Date) ||
@@ -164,7 +185,7 @@ namespace auto.Forms
                     add = true;
                 }
             }
-            if(add)
+            if (add)
             {
                 labelMessage.ForeColor = Color.GreenYellow;
                 labelMessage.Text = "Авто забронированно";
@@ -177,6 +198,72 @@ namespace auto.Forms
             }
             automobiles.SaveChanges();
 
+        }
+
+        private void btnIzm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFD = new OpenFileDialog();
+            FolderBrowserDialog FBD = new FolderBrowserDialog();
+            FBD.ShowNewFolderButton = false;
+            listView1.LargeImageList = imageList1;
+            if (OFD.ShowDialog() == DialogResult.OK)
+            {
+                foreach (string file in OFD.FileNames)
+                {
+                    imageList1.Images.Add(Image.FromFile(file));
+                    //MessageBox.Show(file);
+                    ListViewItem lvi = new ListViewItem();
+                    lvi.Tag = "packages\\Foto\\"+ labelBrand.Text + "_" + labelModel.Text + "_" + (i + 1).ToString()+ ".jpg";
+                    lvi.ImageIndex = i; // установка картинки для файла
+                    
+                    // добавляем элемент в ListView
+                    listView1.Items.Add(lvi);
+
+                    string path = "";
+                    path += lvi.Tag.ToString();
+                    Images image = new Images();
+                    image.idAuto = auto.idAuto;
+                    image.image = path;
+                    automobiles.Images.Add(image);
+
+                    
+                    Image img = imageList1.Images[i];
+                    img.Save(path);
+
+                    i++;
+                }
+                automobiles.SaveChanges();
+            }
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            if (listView1.FocusedItem != null)
+            {
+                string path = "";
+                path = listView1.FocusedItem.Tag.ToString();
+                
+                imageList1.Images.RemoveAt(listView1.FocusedItem.Index);
+                listView1.FocusedItem.Remove();
+                Images image = automobiles.Images.Where(x => x.image == path).FirstOrDefault();
+                automobiles.Images.Remove(image);
+
+                i = 0;
+                foreach (ListViewItem lvi in listView1.Items)
+                {
+                    image=automobiles.Images.Where(x => x.image==lvi.Tag.ToString()).FirstOrDefault();
+                    lvi.Tag = "packages\\Foto\\"+ labelBrand.Text + "_" + labelModel.Text + "_" + (i + 1).ToString()+".jpg";
+                    image.image = lvi.Tag.ToString();
+                    lvi.ImageIndex = i; // установка картинки для файла
+                    i++;
+                    automobiles.SaveChanges();
+                }
+            }
         }
     }
 }

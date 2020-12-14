@@ -18,5 +18,17 @@ namespace auto.Forms
 
 
         }
+
+        public FormMessage(string message)
+        {
+            InitializeComponent();
+
+            textBox1.Text = message;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.iconRent = new FontAwesome.Sharp.IconButton();
             this.addBtn = new FontAwesome.Sharp.IconButton();
             this.iconButtonOrders = new FontAwesome.Sharp.IconButton();
             this.iconButtonUsers = new FontAwesome.Sharp.IconButton();
@@ -53,7 +54,6 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconCorrectChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
-            this.iconRent = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubAuto.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -84,6 +84,30 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 545);
             this.panelMenu.TabIndex = 0;
+            // 
+            // iconRent
+            // 
+            this.iconRent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconRent.FlatAppearance.BorderSize = 0;
+            this.iconRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconRent.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconRent.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconRent.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
+            this.iconRent.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconRent.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconRent.IconSize = 32;
+            this.iconRent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconRent.Location = new System.Drawing.Point(0, 560);
+            this.iconRent.Name = "iconRent";
+            this.iconRent.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconRent.Rotation = 0D;
+            this.iconRent.Size = new System.Drawing.Size(199, 60);
+            this.iconRent.TabIndex = 6;
+            this.iconRent.Text = "Заказы";
+            this.iconRent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconRent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconRent.UseVisualStyleBackColor = true;
+            this.iconRent.Click += new System.EventHandler(this.iconRent_Click);
             // 
             // addBtn
             // 
@@ -470,29 +494,6 @@
             this.labelTitleChildForm.Size = new System.Drawing.Size(78, 29);
             this.labelTitleChildForm.TabIndex = 1;
             this.labelTitleChildForm.Text = "Home";
-            // 
-            // iconRent
-            // 
-            this.iconRent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconRent.FlatAppearance.BorderSize = 0;
-            this.iconRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconRent.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconRent.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconRent.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
-            this.iconRent.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconRent.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconRent.IconSize = 32;
-            this.iconRent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconRent.Location = new System.Drawing.Point(0, 560);
-            this.iconRent.Name = "iconRent";
-            this.iconRent.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconRent.Rotation = 0D;
-            this.iconRent.Size = new System.Drawing.Size(199, 60);
-            this.iconRent.TabIndex = 6;
-            this.iconRent.Text = "Заказы";
-            this.iconRent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconRent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconRent.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 

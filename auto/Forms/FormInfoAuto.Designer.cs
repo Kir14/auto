@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelMessage = new System.Windows.Forms.TextBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnMinimaze = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximaze = new FontAwesome.Sharp.IconPictureBox();
@@ -51,13 +52,17 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.labelMessage = new System.Windows.Forms.TextBox();
+            this.btnIzm = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimaze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximaze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -70,9 +75,11 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.iconButton2);
+            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.labelMessage);
             this.panel1.Controls.Add(this.panelTitleBar);
-            this.panel1.Controls.Add(this.iconButtonOrder);
             this.panel1.Controls.Add(this.labelPrice);
             this.panel1.Controls.Add(this.labelYear);
             this.panel1.Controls.Add(this.labelModel);
@@ -92,6 +99,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1104, 896);
             this.panel1.TabIndex = 1;
+            // 
+            // labelMessage
+            // 
+            this.labelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
+            this.labelMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelMessage.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMessage.Location = new System.Drawing.Point(136, 27);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(848, 31);
+            this.labelMessage.TabIndex = 36;
+            this.labelMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panelTitleBar
             // 
@@ -157,6 +175,7 @@
             // iconButtonOrder
             // 
             this.iconButtonOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
+            this.iconButtonOrder.Dock = System.Windows.Forms.DockStyle.Left;
             this.iconButtonOrder.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.iconButtonOrder.FlatAppearance.BorderSize = 3;
             this.iconButtonOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -167,10 +186,10 @@
             this.iconButtonOrder.IconColor = System.Drawing.Color.Black;
             this.iconButtonOrder.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonOrder.IconSize = 48;
-            this.iconButtonOrder.Location = new System.Drawing.Point(361, 834);
+            this.iconButtonOrder.Location = new System.Drawing.Point(255, 0);
             this.iconButtonOrder.Name = "iconButtonOrder";
             this.iconButtonOrder.Rotation = 0D;
-            this.iconButtonOrder.Size = new System.Drawing.Size(255, 56);
+            this.iconButtonOrder.Size = new System.Drawing.Size(255, 60);
             this.iconButtonOrder.TabIndex = 34;
             this.iconButtonOrder.Text = "Забронировать";
             this.iconButtonOrder.UseVisualStyleBackColor = false;
@@ -349,16 +368,81 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // labelMessage
+            // btnIzm
             // 
-            this.labelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
-            this.labelMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.labelMessage.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMessage.Location = new System.Drawing.Point(136, 27);
-            this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(848, 31);
-            this.labelMessage.TabIndex = 36;
-            this.labelMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnIzm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
+            this.btnIzm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnIzm.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.btnIzm.FlatAppearance.BorderSize = 3;
+            this.btnIzm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzm.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnIzm.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnIzm.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnIzm.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnIzm.IconColor = System.Drawing.Color.Black;
+            this.btnIzm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnIzm.IconSize = 48;
+            this.btnIzm.Location = new System.Drawing.Point(0, 0);
+            this.btnIzm.Name = "btnIzm";
+            this.btnIzm.Rotation = 0D;
+            this.btnIzm.Size = new System.Drawing.Size(255, 60);
+            this.btnIzm.TabIndex = 37;
+            this.btnIzm.Text = "Изменить";
+            this.btnIzm.UseVisualStyleBackColor = false;
+            this.btnIzm.Click += new System.EventHandler(this.btnIzm_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.iconButtonOrder);
+            this.panel2.Controls.Add(this.btnIzm);
+            this.panel2.Location = new System.Drawing.Point(320, 818);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(641, 60);
+            this.panel2.TabIndex = 38;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.iconButton1.FlatAppearance.BorderSize = 3;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButton1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 48;
+            this.iconButton1.Location = new System.Drawing.Point(59, 342);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(255, 60);
+            this.iconButton1.TabIndex = 38;
+            this.iconButton1.Text = "Добавить";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
+            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.iconButton2.FlatAppearance.BorderSize = 3;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButton2.ForeColor = System.Drawing.Color.GhostWhite;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 48;
+            this.iconButton2.Location = new System.Drawing.Point(798, 342);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(255, 60);
+            this.iconButton2.TabIndex = 39;
+            this.iconButton2.Text = "Удалить";
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // FormInfoAuto
             // 
@@ -379,6 +463,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximaze)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -408,5 +493,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TextBox labelMessage;
+        private FontAwesome.Sharp.IconButton btnIzm;
+        private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

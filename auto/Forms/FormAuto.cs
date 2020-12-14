@@ -136,10 +136,20 @@ namespace auto.Forms
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            
             ListViewItem lvi= listView1.FocusedItem;
             InfoUser info = new InfoUser();
-            FormInfoAuto f = new FormInfoAuto(Int32.Parse(lvi.Tag.ToString()),info.getidUser());
-            f.Show();
+            if(info.getidUser()==0)
+            {
+                FormMessage message = new FormMessage("Чтобы продолжить необходимо войти");
+                message.Show();
+            }
+            else
+            {
+                FormInfoAuto f = new FormInfoAuto(Int32.Parse(lvi.Tag.ToString()), info.getidUser());
+                f.Show();
+            }
+            
         }
     }
 }

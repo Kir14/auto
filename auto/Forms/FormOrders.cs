@@ -30,11 +30,12 @@ namespace auto.Forms
             dataGridView1.Columns[5].HeaderText = "Конец аренды";
             dataGridView1.Columns[6].HeaderText = "Стоимость";
 
-            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+            //DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
                         
-            dataGridView1.Columns.Add(column);
-            dataGridView1.Columns[9].HeaderText = "Авто";
-            dataGridView1.Columns[9].Name = "Авто";
+            //dataGridView1.Columns.Add(column);
+            //dataGridView1.Columns[9].HeaderText = "Авто";
+            //dataGridView1.Columns[9].Name = "Авто";
+
             int n = dataGridView1.Columns.Count;
             for (int i = 0; i < n; i++)
             {

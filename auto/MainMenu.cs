@@ -328,5 +328,12 @@ namespace auto
             FormLogin login = new FormLogin(this);
             login.Show();
         }
+
+        private void iconRent_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new FormRent());
+        }
     }
 }
