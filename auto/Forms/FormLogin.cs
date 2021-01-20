@@ -18,12 +18,15 @@ namespace auto.Forms
         public FormLogin()
         {
             InitializeComponent();
+
+            label1.Visible = false;
         }
 
         public FormLogin(MainMenu main)
         {
             InitializeComponent();
 
+            label1.Visible = false;
             menu = main;
         }
 
@@ -40,6 +43,10 @@ namespace auto.Forms
                 info.setIdUser(user.idUser);
                 info.setUserName(name);
                 this.Dispose();
+            }
+            else
+            {
+                label1.Visible = true;
             }
         }
 

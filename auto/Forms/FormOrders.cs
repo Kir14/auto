@@ -52,13 +52,13 @@ namespace auto.Forms
             //}
 
             Automobiles auto = new Automobiles();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                int idauto = Int32.Parse(row.Cells[1].Value.ToString());
-                auto = automobiles.Automobiles.Where(x => x.idAuto == idauto).FirstOrDefault();
-                row.Cells[9].Value = (auto.Brands.nameBrand + "  11 " + auto.Models.nameModel).ToString();
-            }
-            dataGridView1[9, 1].Value = "dsdsds";
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    int idauto = Int32.Parse(row.Cells[1].Value.ToString());
+            //    auto = automobiles.Automobiles.Where(x => x.idAuto == idauto).FirstOrDefault();
+            //    row.Cells[9].Value = (auto.Brands.nameBrand + "  11 " + auto.Models.nameModel).ToString();
+            //}
+            //dataGridView1[9, 1].Value = "dsdsds";
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
 

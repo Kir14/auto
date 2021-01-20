@@ -36,6 +36,7 @@
             this.textPass = new System.Windows.Forms.TextBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnRegistration = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -110,6 +111,7 @@
             this.textPass.ForeColor = System.Drawing.Color.White;
             this.textPass.Location = new System.Drawing.Point(152, 241);
             this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '*';
             this.textPass.Size = new System.Drawing.Size(261, 31);
             this.textPass.TabIndex = 3;
             this.textPass.Text = "Пароль";
@@ -143,12 +145,24 @@
             this.btnRegistration.UseVisualStyleBackColor = false;
             this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(146, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 31);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Неверный ввод";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(506, 577);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistration);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.panel2);
@@ -177,5 +191,6 @@
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnRegistration;
+        private System.Windows.Forms.Label label1;
     }
 }

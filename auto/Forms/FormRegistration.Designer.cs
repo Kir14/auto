@@ -105,6 +105,7 @@
             this.textPass.ForeColor = System.Drawing.Color.White;
             this.textPass.Location = new System.Drawing.Point(149, 156);
             this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '*';
             this.textPass.Size = new System.Drawing.Size(261, 31);
             this.textPass.TabIndex = 9;
             this.textPass.Text = "Пароль";
